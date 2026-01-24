@@ -1,6 +1,6 @@
 const WEB_APP_URL =
-  "https://script.google.com/macros/s/AKfycbzD-i-Yi9f8O29IxrEYw9GhmFN4rq22J2KQ1rPIguTS6NhrglLm5P_WY7jL4UyPF2VE/exec";
-const TOKEN = "TOKEN_RAHASIA";
+  "https://script.google.com/macros/s/AKfycbxSbXa0fNJMlmmwFFo0YS8Y9bZXMg6b5cDak7CzoAhIswAvAPLktYSzvIKEJ46lIL6S/exec";
+const TOKEN = "email123";
 
 function kirimMassal() {
   const textarea = document.getElementById("dataInput");
