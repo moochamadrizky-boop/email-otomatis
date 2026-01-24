@@ -1,5 +1,5 @@
 const WEB_APP_URL =
-  "https://script.google.com/macros/s/AKfycbzjXU7Dz3oqv8Rq74plll4t-OBSQytZajwjXEy7TmB25UuV1XieiAw_Tu_bNNusZCOS/exec";
+  "https://script.google.com/macros/s/AKfycbzD-i-Yi9f8O29IxrEYw9GhmFN4rq22J2KQ1rPIguTS6NhrglLm5P_WY7jL4UyPF2VE/exec";
 const TOKEN = "TOKEN_RAHASIA";
 
 function kirimMassal() {
