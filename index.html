@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Email Otomatis</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Email Otomatis</h1>
+      <p class="subtitle">
+        Masukkan data dengan format:<br />
+        <code>Nama, email@email.com</code> (1 baris = 1 data)
+      </p>
+
+      <textarea
+        id="dataInput"
+        placeholder="Contoh:
+Andi, andi@gmail.com
+Budi, budi@gmail.com
+Siti, siti@gmail.com"
+      ></textarea>
+
+      <button id="sendBtn" onclick="kirimMassal()">🚀 Kirim Email</button>
+
+      <p id="status" class="status"></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
