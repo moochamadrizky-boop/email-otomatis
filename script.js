@@ -1,5 +1,5 @@
 const WEB_APP_URL =
-  "https://script.google.com/macros/s/AKfycbxSbXa0fNJMlmmwFFo0YS8Y9bZXMg6b5cDak7CzoAhIswAvAPLktYSzvIKEJ46lIL6S/exec";
+  "https://script.google.com/macros/s/AKfycbxdpMwVfQ1sw5-L248PqRQeiGekSGesLe5mBhPKmEhdmp-l0Sls2rKsUD20m8-6q4rk/exec";
 const TOKEN = "email123";
 
 function kirimMassal() {
