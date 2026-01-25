@@ -1,55 +1,172 @@
-const WEB_APP_URL =
-  "https://script.google.com/macros/s/AKfycbySU99ZBKdwGQWCkoujX_BhMxZ4tbpu4Z3ocGLnv_DKBhfkuK7jjcFTVEYQsI5rO2hV/exec";
-const TOKEN = "email123";
+// ================== KONFIGURASI ==================
+const WEB_APPS = [
+  {
+    url: "https://script.google.com/macros/s/AKfycbyBLqRj0s16SayAF1W6TdzXw8WyKeAurkknVLxT2bj07IjVyF67ttZOvWuuGCqxJc0k/exec",
+    token: "email123",
+  },
+  {
+    url: "https://script.google.com/macros/s/AKfycbzBOtL94cOIlIkrIZzoO3BsX0LmgrSI8BkYSm1rQSBc046HHrYHAZXWOzUQ-5lUsER-pg/exec",
+    token: "email456",
+  },
+  {
+    url: "https://script.google.com/macros/s/AKfycbx1P-wnFU9P_Jf2qU6wbs4BqOvnBEx1pNAdkz41A93BPN4lsTYop5-R0aXVyxQRh0OB/exec",
+    token: "email789",
+  },
+];
 
+// ================== ELEMENTS ==================
+const textarea = document.getElementById("dataInput");
+const statusEl = document.getElementById("status");
+const summaryEl = document.getElementById("summary");
+const sendBtn = document.getElementById("sendBtn");
+const emailBtn = document.getElementById("sendEmailBtn");
+const hapusBtn = document.getElementById("hapusBtn");
+const tbody = document.querySelector("#statusTable tbody");
+
+// ================== KIRIM MASSAL KE SHEET ==================
 function kirimMassal() {
-  const textarea = document.getElementById("dataInput");
-  const statusEl = document.getElementById("status");
-  const button = document.getElementById("sendBtn");
-
   const lines = textarea.value.trim().split("\n");
-  const list = [];
-
-  lines.forEach((line) => {
-    const parts = line.split(",");
-    if (parts.length === 2) {
-      const nama = parts[0].trim();
-      const email = parts[1].trim();
-      if (email.includes("@")) {
-        list.push({ nama, email });
-      }
-    }
-  });
-
-  if (list.length === 0) {
-    statusEl.innerText = "❌ Data tidak valid";
+  if (!lines.length) {
+    statusEl.innerText = "❌ Data kosong";
     statusEl.style.color = "red";
     return;
   }
 
-  button.disabled = true;
-  button.innerText = "⏳ Mengirim...";
-  statusEl.innerText = "";
+  sendBtn.disabled = true;
+  sendBtn.innerText = "⏳ Mengirim...";
 
-  fetch(WEB_APP_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      token: TOKEN,
-      list: list,
-    }),
-  })
-    .then((res) => res.json())
-    .then((res) => {
-      statusEl.innerText = `✅ ${res.message}`;
-      statusEl.style.color = "green";
-      button.innerText = "🚀 Kirim Email";
-      button.disabled = false;
+  const promises = WEB_APPS.map((app, idx) => {
+    const start = idx * 100;
+    const end = start + 100;
+    const chunk = lines.slice(start, end);
+    if (!chunk.length) return Promise.resolve();
+
+    const formData = new URLSearchParams();
+    formData.append("token", app.token);
+
+    chunk.forEach((line, i) => {
+      const [nama, email, pesan] = line.split(",").map((s) => s.trim());
+      if (nama && email && email.includes("@")) {
+        formData.append(`nama${i}`, nama);
+        formData.append(`email${i}`, email);
+        if (pesan) formData.append(`pesan${i}`, pesan);
+      }
+    });
+
+    return fetch(app.url, { method: "POST", body: formData })
+      .then((res) => res.text())
+      .then((res) => {
+        if (res.trim() !== "success") throw new Error(res);
+      });
+  });
+
+  Promise.allSettled(promises).then((results) => {
+    let successCount = 0,
+      failCount = 0;
+    results.forEach((r) =>
+      r.status === "fulfilled" ? successCount++ : failCount++,
+    );
+    statusEl.innerText = `📤 Kirim selesai: ${successCount} Web App berhasil, ${failCount} gagal`;
+    statusEl.style.color = failCount ? "red" : "green";
+    textarea.value = "";
+    sendBtn.disabled = false;
+    sendBtn.innerText = "🚀 Kirim ke Sheet";
+    lihatStatus(); // refresh tabel & summary
+  });
+}
+
+// ================== JALANKAN EMAIL OTOMATIS ==================
+function kirimEmail() {
+  let total = 0,
+    berhasil = 0,
+    gagal = 0;
+
+  const promises = WEB_APPS.map((app) =>
+    fetch(`${app.url}?action=getStatus`)
+      .then((res) => res.json())
+      .then((data) => {
+        data.forEach((row) => {
+          const status = row[3]?.trim().toLowerCase(); // kolom Status
+          total++;
+          if (status === "sent") berhasil++;
+          else if (status === "failed") gagal++;
+        });
+        return fetch(`${app.url}?action=sendEmail`).then((res) => res.json());
+      }),
+  );
+
+  Promise.all(promises)
+    .then(() => {
+      summaryEl.innerText = `Total: ${total} | Berhasil: ${berhasil} | Gagal: ${gagal}`;
+      statusEl.innerText = "📤 Email otomatis dijalankan";
+      statusEl.style.color = "blue";
+      lihatStatus();
     })
-    .catch(() => {
-      statusEl.innerText = "❌ Gagal menghubungi server";
+    .catch((err) => {
+      statusEl.innerText = "❌ Gagal jalankan email";
       statusEl.style.color = "red";
-      button.innerText = "🚀 Kirim Email";
-      button.disabled = false;
+      console.error(err);
     });
 }
+
+// ================== HAPUS DATA ==================
+function hapusData() {
+  const promises = WEB_APPS.map((app) =>
+    fetch(`${app.url}?action=hapusData`).then((res) => res.json()),
+  );
+  Promise.all(promises)
+    .then(() => {
+      statusEl.innerText = "🗑 Semua data dihapus";
+      statusEl.style.color = "orange";
+      tbody.innerHTML = "";
+      summaryEl.innerText = "Total: 0 | Berhasil: 0 | Gagal: 0";
+    })
+    .catch((err) => {
+      statusEl.innerText = "❌ Gagal hapus data";
+      statusEl.style.color = "red";
+      console.error(err);
+    });
+}
+
+// ================== LIHAT STATUS SHEET ==================
+function lihatStatus() {
+  tbody.innerHTML = "";
+  let total = 0,
+    berhasil = 0,
+    gagal = 0;
+
+  WEB_APPS.forEach((app) => {
+    fetch(`${app.url}?action=getStatus`)
+      .then((res) => res.json())
+      .then((data) => {
+        data.forEach((row) => {
+          const tr = document.createElement("tr");
+          row.forEach((cell) => {
+            const td = document.createElement("td");
+            td.innerText = cell;
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+
+          const status = row[3]?.trim().toLowerCase();
+          total++;
+          if (status === "sent") berhasil++;
+          else if (status === "failed") gagal++;
+        });
+
+        summaryEl.innerText = `Total: ${total} | Berhasil: ${berhasil} | Gagal: ${gagal}`;
+      })
+      .catch(() => {
+        tbody.innerHTML +=
+          "<tr><td colspan='4'>❌ Gagal mengambil status</td></tr>";
+      });
+  });
+}
+
+// ================== EVENT ==================
+sendBtn.addEventListener("click", kirimMassal);
+emailBtn.addEventListener("click", kirimEmail);
+hapusBtn.addEventListener("click", hapusData);
+
+// ================== LOAD STATUS SAAT HALAMAN DIBUKA ==================
+lihatStatus();

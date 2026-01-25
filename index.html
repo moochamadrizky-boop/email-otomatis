@@ -2,30 +2,51 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <title>Email Otomatis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Massal</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Email Otomatis</h1>
-      <p class="subtitle">
-        Masukkan data dengan format:<br />
-        <code>Nama, email@email.com</code> (1 baris = 1 data)
+      <h1>Email Massal BY Jangkung</h1>
+      <p>
+        Format input: <code>Nama,Email,Catatan(optional)</code> (1 baris = 1
+        data)
       </p>
 
+      <!-- Textarea Input -->
       <textarea
         id="dataInput"
-        placeholder="Contoh:
-Andi, andi@gmail.com
-Budi, budi@gmail.com
-Siti, siti@gmail.com"
+        placeholder="Rizky,rizky@gmail.com,Catatan khusus"
       ></textarea>
 
-      <button id="sendBtn" onclick="kirimMassal()">🚀 Kirim Email</button>
+      <!-- Buttons -->
+      <div class="buttons">
+        <button id="sendBtn">🚀 Kirim ke Sheet</button>
+        <button id="sendEmailBtn">📤 Jalankan Email</button>
+        <button id="hapusBtn">🗑 Hapus Data</button>
+      </div>
 
+      <!-- Status Global -->
       <p id="status" class="status"></p>
+      <p id="summary" class="status">Total: 0 | Berhasil: 0 | Gagal: 0</p>
+
+      <!-- Tabel Status -->
+      <h3>Status Email</h3>
+      <table id="statusTable">
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Pesan Khusus</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
 
+    <!-- Script JS -->
     <script src="script.js"></script>
   </body>
 </html>
