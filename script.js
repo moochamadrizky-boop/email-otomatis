@@ -1,12 +1,12 @@
 // ================== KONFIGURASI ==================
 const WEB_APPS = [
-{
-    url: "https://script.google.com/macros/s/AKfycbxiA3hWYGeAVuz8PK_CXdYaBy6dwEJCWUhO0KnOzH-ZxFKth1nzwg1ousdLLYDfQPEi/exec",
-    token: "email444",
-  },
   {
     url: "https://script.google.com/macros/s/AKfycbytaALG4NBqrgy5pXL6Qkwu3DAFBIpScXvbN1_WL_Zr9Mm54gECbCeY-vAXB3rBXTKR/exec",
     token: "email123",
+  },
+    {
+    url: "https://script.google.com/macros/s/AKfycbxiA3hWYGeAVuz8PK_CXdYaBy6dwEJCWUhO0KnOzH-ZxFKth1nzwg1ousdLLYDfQPEi/exec",
+    token: "email444",
   },
   {
     url: "https://script.google.com/macros/s/AKfycbxia_lb1-nWj9yTMA-34dDC7kesNhf63wsv_aUsWyT-w3zd-sLsHNsPxwV6dnE3bIev/exec",
