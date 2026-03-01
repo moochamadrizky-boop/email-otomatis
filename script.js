@@ -9,8 +9,8 @@ const WEB_APPS = [
     token: "email444",
   },
   {
-    url: "https://script.google.com/macros/s/AKfycbxia_lb1-nWj9yTMA-34dDC7kesNhf63wsv_aUsWyT-w3zd-sLsHNsPxwV6dnE3bIev/exec",
-    token: "email789",
+    url: "https://script.google.com/macros/s/AKfycbzrFm6f-dGpr_MPXT02ODP-d_rMRF2MDUdRgrtnbTxHa6Ek95we1TvzTyV9ZqM8o0pM/exec",
+    token: "email222",
   },
 ];
 
