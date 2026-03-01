@@ -5,8 +5,8 @@ const WEB_APPS = [
     token: "email123",
   },
   {
-    url: "https://script.google.com/macros/s/AKfycbxMwHpMeOx-vErLvcJtBxPSRsli-JBPDZMC31uVNOojjjp4Yl3NU-Y2jiMtTZ2VZvmJuw/exec",
-    token: "email333",
+    url: "https://script.google.com/macros/s/AKfycbxq0VnfVioN2FPG1RmtY9idjMJHLZiyUoHw25c8uFzna8u1cCHEWsJ5JhYv6oMoJnODDA/exec",
+    token: "email654",
   },
   {
     url: "https://script.google.com/macros/s/AKfycbxia_lb1-nWj9yTMA-34dDC7kesNhf63wsv_aUsWyT-w3zd-sLsHNsPxwV6dnE3bIev/exec",
