@@ -6,9 +6,27 @@
     <title>Email Massal</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="container">
       <h1>Email Massall BY Jangkung</h1>
+
+      <!-- TAMBAHAN SUBJECT -->
+      <p>Subjek Email (untuk semua)</p>
+      <input
+        type="text"
+        id="subjectEmail"
+        placeholder="Contoh: Promo Spesial Hari Ini"
+      />
+
+      <!-- TEMPLATE PESAN -->
+      <p>Template Pesan Khusus (pakai {nama} untuk isi otomatis)</p>
+      <textarea
+        id="templatePesan"
+        placeholder="Halo {nama}, ini pesan untuk kamu"
+      ></textarea>
+
+      <!-- FORMAT INPUT -->
       <p>
         Format input: <code>Nama,Email,Catatan(optional)</code> (1 baris = 1
         data)
@@ -17,7 +35,7 @@
       <!-- Textarea Input -->
       <textarea
         id="dataInput"
-        placeholder="Rizky,rizky@gmail.com,Catatan khusus"
+        placeholder="Rizky,rizky@gmail.com,VIP"
       ></textarea>
 
       <!-- Buttons -->
@@ -29,10 +47,12 @@
 
       <!-- Status Global -->
       <p id="status" class="status"></p>
+
       <p id="summary" class="status">Total: 0 | Berhasil: 0 | Gagal: 0</p>
 
       <!-- Tabel Status -->
       <h3>Status Email</h3>
+
       <table id="statusTable">
         <thead>
           <tr>
@@ -42,6 +62,7 @@
             <th>Status</th>
           </tr>
         </thead>
+
         <tbody></tbody>
       </table>
     </div>

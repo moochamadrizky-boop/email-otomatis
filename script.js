@@ -1,44 +1,44 @@
 // ================== KONFIGURASI ==================
 const WEB_APPS = [
   {
-    url: "https://script.google.com/macros/s/AKfycbyoDbTmXX7B7sYLv2fJO4vifC8h6afj44q9D96qS_Rsi6gajhNKht1ULEEurU2hMmL-/exec",
-    token: "email123",
+    url: "https://script.google.com/macros/s/AKfycbx2HKcgn6A5zI0H9_u6HwhC8Jcd6I8lTPGRhshSA6Px_PQ8pjevYBiRzNQN26gJ3mUGAw/exec",
+    token: "email111",
   },
   {
-    url: "https://script.google.com/macros/s/AKfycbzPoGGevkFr0EDIW1DMRowNvE_eX0AYw2TVneLl0w2FgXQYk0L9iDv3NitL7PR1PaEnZQ/exec",
-    token: "email444",
-  },
-  {
-    url: "https://script.google.com/macros/s/AKfycbwT6c2m26T8YcSr1dndeSTleK279-hBxHytZn6_bdgTkbI39voOZ9brLFxki0U7vAAh/exec",
+    url: "https://script.google.com/macros/s/AKfycbxI4S4nlpkG8pLsQyhnczq9e_1HG9gBEbZ8F6itCzMEEYsVgGy6hRcHShwBZ8ft45t9sA/exec",
     token: "email222",
   },
   {
-    url: "https://script.google.com/macros/s/AKfycby9nvdCZITy8LzLnu31c9MU_6OXLBWTCUEkOvdjY7bTC4QfjsTCz0GtH6UaHB6iyVeOvw/exec",
-    token: "emaiL321",
+    url: "https://script.google.com/macros/s/AKfycbw665rhvnei7vopAoOPI9rqbS2S2zFql8IZnV8-5ghS7wrHK1LxLEo4wME9Hi95ZrIMQw/exec",
+    token: "email333",
   },
   {
-    url: "https://script.google.com/macros/s/AKfycbztPxti_wHi5gSU3llEN8sXUmUBj81whZl2_pVm7wzahfPCg1-tbhhw9oe8NGvRHrtpJQ/exec",
-    token: "email212",
+    url: "https://script.google.com/macros/s/AKfycbyxS1KJSGz6tXshIwjs_O_29puPwEGqhWxnTcqdUqzefuHS_sbaGJmTHHww9bwhr7q5/exec",
+    token: "email444",
   },
   {
-    url: "https://script.google.com/macros/s/AKfycbzEbaYBzdguZ8p-W4552fzxkLes_2QnYV5ac6WAuV_6Ne_IjT0c47VRUkPfmtqBTj3L/exec",
-    token: "email312",
+    url: "https://script.google.com/macros/s/AKfycbzF5lAm-dodpDFbIWD26SjhV3QwCEE7qt17mJ2lJ6QKH8ZWf1K5gO42wpCVKH0-elWS/exec",
+    token: "email555",
   },
   {
-    url: "https://script.google.com/macros/s/AKfycbxvpssDjz-O5c43e1sd_Wun8vBH-cMC7EgtoBHhVu2aoUdEwcOdoOrQyA6Riem3R72crg/exec",
-    token: "email213",
+    url: "https://script.google.com/macros/s/AKfycbzskpF82caglS2dIsLNPF_BsUB5Imr-9EcYzAxlsgkYGREorMWH8cRm9LXC82f0iW84/exec",
+    token: "email666",
   },
   {
-    url: "https://script.google.com/macros/s/AKfycbzc_9CUmNLsJPkDXm-qgcM_c4OJxIoWdt2rnprTbimFEltAKidThCEK_5CsNcRHAJ05kw/exec",
-    token: "email145",
+    url: "https://script.google.com/macros/s/AKfycbwn11nE9byULoHClSzFAoLtsyLwwQJiCoffHr_Tgt7gDaYZxbtltFMSnxPRrgDLgFyw/exec",
+    token: "email777",
   },
   {
-    url: "https://script.google.com/macros/s/AKfycbzml3Vezp2UBYAMUt62lFi_HdgaTldPnyiH8-5bqkiwIlp0gecQ8Wx_3KfU6jQGl5fX/exec",
-    token: "email432",
+    url: "https://script.google.com/macros/s/AKfycbz7s_FHNmnIUhH81IYeOunhehGl_vlIU3oRKiiT0MoqnTNalurDRbRP-HoBEnzLZ1j9/exec",
+    token: "email888",
   },
   {
-    url: "https://script.google.com/macros/s/AKfycbwSZiTMVTJhaScNHjPtgEW_1YyqNZf9aePOPpXP7pN0ZK2ZxNX0DglOEZOujXB3oS3U/exec",
-    token: "email313",
+    url: "https://script.google.com/macros/s/AKfycbyhQGjYAcsBMEEGMSUhhqkYP8P-5fWbb0R7GbRQhMdju1JTwX3kwDnYCnJIPdrjMDniSw/exec",
+    token: "email999",
+  },
+  {
+    url: "https://script.google.com/macros/s/AKfycbwctyD-JEmHaFA6_O-UJaB8Bk2KJZHt38gIg_HNxzMa234Wm0ISlTxRmax32kaJPAxh8w/exec",
+    token: "email1010",
   },
 ];
 
@@ -51,7 +51,27 @@ const emailBtn = document.getElementById("sendEmailBtn");
 const hapusBtn = document.getElementById("hapusBtn");
 const tbody = document.querySelector("#statusTable tbody");
 
-// ================== KIRIM MASSAL KE SHEET ==================
+// TAMBAHAN
+const templatePesan = document.getElementById("templatePesan");
+const subjectEmail = document.getElementById("subjectEmail");
+
+// ================== TEMPLATE ==================
+function generatePesan(nama, email, catatan, index) {
+  let template = templatePesan?.value?.trim();
+
+  // fallback kalau kosong
+  if (!template) {
+    return `Halo ${nama},`;
+  }
+
+  return template
+    .replace(/{nama}/gi, nama)
+    .replace(/{email}/gi, email)
+    .replace(/{catatan}/gi, catatan || "")
+    .replace(/{nomor}/gi, index + 1);
+}
+
+// ================== KIRIM MASSAL ==================
 function kirimMassal() {
   const lines = textarea.value.trim().split("\n");
   if (!lines.length) {
@@ -60,17 +80,29 @@ function kirimMassal() {
     return;
   }
 
+  const processedLines = lines.map((line, i) => {
+    const [nama, email, pesan] = line.split(",").map((s) => s.trim());
+
+    // FIX UTAMA (biar template kepakai)
+    let finalPesan = generatePesan(nama, email, pesan || "", i);
+
+    return `${nama},${email},${finalPesan}`;
+  });
+
   sendBtn.disabled = true;
   sendBtn.innerText = "⏳ Mengirim...";
 
   const promises = WEB_APPS.map((app, idx) => {
     const start = idx * 100;
     const end = start + 100;
-    const chunk = lines.slice(start, end);
+    const chunk = processedLines.slice(start, end);
     if (!chunk.length) return Promise.resolve();
 
     const formData = new URLSearchParams();
     formData.append("token", app.token);
+
+    // FIX SUBJECT WAJIB KIRIM
+    formData.append("subject", subjectEmail?.value || "");
 
     chunk.forEach((line, i) => {
       const [nama, email, pesan] = line.split(",").map((s) => s.trim());
@@ -91,19 +123,23 @@ function kirimMassal() {
   Promise.allSettled(promises).then((results) => {
     let successCount = 0,
       failCount = 0;
+
     results.forEach((r) =>
       r.status === "fulfilled" ? successCount++ : failCount++,
     );
+
     statusEl.innerText = `📤 Kirim selesai: ${successCount} Web App berhasil, ${failCount} gagal`;
     statusEl.style.color = failCount ? "red" : "green";
+
     textarea.value = "";
     sendBtn.disabled = false;
     sendBtn.innerText = "🚀 Kirim ke Sheet";
-    lihatStatus(); // refresh tabel & summary
+
+    lihatStatus();
   });
 }
 
-// ================== JALANKAN EMAIL OTOMATIS ==================
+// ================== EMAIL ==================
 function kirimEmail() {
   let total = 0,
     berhasil = 0,
@@ -114,27 +150,22 @@ function kirimEmail() {
       .then((res) => res.json())
       .then((data) => {
         data.forEach((row) => {
-          const status = row[3]?.trim().toLowerCase(); // kolom Status
+          const status = row[3]?.trim().toLowerCase();
           total++;
           if (status === "sent") berhasil++;
           else if (status === "failed") gagal++;
         });
+
         return fetch(`${app.url}?action=sendEmail`).then((res) => res.json());
       }),
   );
 
-  Promise.all(promises)
-    .then(() => {
-      summaryEl.innerText = `Total: ${total} | Berhasil: ${berhasil} | Gagal: ${gagal}`;
-      statusEl.innerText = "📤 Email otomatis dijalankan";
-      statusEl.style.color = "blue";
-      lihatStatus();
-    })
-    .catch((err) => {
-      statusEl.innerText = "❌ Gagal jalankan email";
-      statusEl.style.color = "red";
-      console.error(err);
-    });
+  Promise.all(promises).then(() => {
+    summaryEl.innerText = `Total: ${total} | Berhasil: ${berhasil} | Gagal: ${gagal}`;
+    statusEl.innerText = "📤 Email otomatis dijalankan";
+    statusEl.style.color = "blue";
+    lihatStatus();
+  });
 }
 
 // ================== HAPUS DATA ==================
@@ -142,21 +173,16 @@ function hapusData() {
   const promises = WEB_APPS.map((app) =>
     fetch(`${app.url}?action=hapusData`).then((res) => res.json()),
   );
-  Promise.all(promises)
-    .then(() => {
-      statusEl.innerText = "🗑 Semua data dihapus";
-      statusEl.style.color = "orange";
-      tbody.innerHTML = "";
-      summaryEl.innerText = "Total: 0 | Berhasil: 0 | Gagal: 0";
-    })
-    .catch((err) => {
-      statusEl.innerText = "❌ Gagal hapus data";
-      statusEl.style.color = "red";
-      console.error(err);
-    });
+
+  Promise.all(promises).then(() => {
+    statusEl.innerText = "🗑 Semua data dihapus";
+    statusEl.style.color = "orange";
+    tbody.innerHTML = "";
+    summaryEl.innerText = "Total: 0 | Berhasil: 0 | Gagal: 0";
+  });
 }
 
-// ================== LIHAT STATUS SHEET ==================
+// ================== LIHAT STATUS ==================
 function lihatStatus() {
   tbody.innerHTML = "";
   let total = 0,
@@ -169,11 +195,13 @@ function lihatStatus() {
       .then((data) => {
         data.forEach((row) => {
           const tr = document.createElement("tr");
+
           row.forEach((cell) => {
             const td = document.createElement("td");
             td.innerText = cell;
             tr.appendChild(td);
           });
+
           tbody.appendChild(tr);
 
           const status = row[3]?.trim().toLowerCase();
@@ -183,10 +211,6 @@ function lihatStatus() {
         });
 
         summaryEl.innerText = `Total: ${total} | Berhasil: ${berhasil} | Gagal: ${gagal}`;
-      })
-      .catch(() => {
-        tbody.innerHTML +=
-          "<tr><td colspan='4'>❌ Gagal mengambil status</td></tr>";
       });
   });
 }
@@ -196,5 +220,5 @@ sendBtn.addEventListener("click", kirimMassal);
 emailBtn.addEventListener("click", kirimEmail);
 hapusBtn.addEventListener("click", hapusData);
 
-// ================== LOAD STATUS SAAT HALAMAN DIBUKA ==================
+// ================== LOAD ==================
 lihatStatus();
